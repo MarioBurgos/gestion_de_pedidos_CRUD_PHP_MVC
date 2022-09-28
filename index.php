@@ -1,5 +1,6 @@
 <?php 
 require_once 'config/config.php';
+require_once 'config/credentials.php';
 require_once 'model/dbconnector.php';
 /* Mediante GET se obtienen los parametros para navegar por la pagina.  Si no se reciben, carga los default */
 if(!isset($_GET["controller"])) $_GET["controller"] = constant("DEFAULT_CONTROLLER");

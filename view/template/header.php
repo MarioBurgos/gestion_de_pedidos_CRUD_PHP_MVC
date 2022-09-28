@@ -37,15 +37,15 @@
                 </div>
                 <div class="menu">
                     <a href="#" class="link">
-                        <div class="title">About</div>
+                        <div class="title">Cómo se hace?</div>
                         <div class="bar"></div>
                     </a>
                     <a href="#" class="link">
-                        <div class="title">Work</div>
+                        <div class="title">Sobre mi</div>
                         <div class="bar"></div>
                     </a>
                     <a href="#" class="link">
-                        <div class="title">Contact</div>
+                        <div class="title">Contacto</div>
                         <div class="bar"></div>
                     </a>
                 </div>
