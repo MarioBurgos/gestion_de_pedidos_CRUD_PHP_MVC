@@ -11,6 +11,14 @@ body {
   font-weight: 400;
 
 }
+
+@media all and (min-width: 768px) {
+  .collapse div {
+   display: flex !important; 
+   justify-content: space-around !important;
+  }
+}
+
 .header {
   height: var(--header-height);
   width: 100%;
@@ -27,20 +35,23 @@ body {
   padding: 26px;
   border-right: 1px solid black;
 }
+
 .link {
   display: inline-block;
   padding: 15px 0;
-  margin: 15px 25px;
+ /* margin: 15px 25px;*/
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 16px;
+  color: white;
 }
 .link .bar {
   width: 100%;
   display: inline-block;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid lightgray;
+  border-radius: 20px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -51,4 +62,5 @@ body {
 .link .bar {
   opacity: 1;
   bottom: 5px;
+  color: yellow;
 }
