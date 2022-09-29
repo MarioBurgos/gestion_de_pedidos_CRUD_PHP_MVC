@@ -37,7 +37,7 @@ class Producto {
 	}
 
 	/* Save note */
-	public function save($codigo, $nombre, $descripcion, $precio){
+	public function save($param){
 		$this->getConection();
 
 		/* Set default values */

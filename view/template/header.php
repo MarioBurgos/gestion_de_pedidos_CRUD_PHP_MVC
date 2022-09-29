@@ -22,18 +22,10 @@
 
 <body>
     <div class="page">
-        <!--
-		<header class="mb-1">
-			<div class="p-1 text-center bg-light">
-				<h1 class="mb-3"></h1>
-				<h4 class="mb-3">-</h4>
-			</div>
-		</header>
--->
         <header>
-            <div class="header">
-                <div class="logo">
-                <?=$controller->page_title?>
+            <div class="header bg-light text dark shadow">
+                <div class="logo ">
+                    <strong><?= $controller->page_title ?></strong>
                 </div>
                 <div class="menu">
                     <a href="#" class="link">
