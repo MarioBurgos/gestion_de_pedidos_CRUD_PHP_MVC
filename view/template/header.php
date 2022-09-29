@@ -22,57 +22,39 @@
 
 <body>
     <div class="page">
-        <!-- 
-        <header>
-            <div class="header bg-light text dark shadow">
-                <div class="logo ">
-                    <strong><?= $controller->page_title ?></strong>
-                </div>
-                <div class="menu">
-                    
-                    
-                    
-                    
-                </div>
-            </div>
-        </header> 
-     -->
+
         <header>
             <div class="collapse" id="navbarToggleExternalContent">
-                <div class="bg-dark p-4">
+                <div class="uncollapsed bg-dark p-2">
                     <h5 class="text-light h4">
                         <a href="index.php?controller=inicio&action=" class="link">
                             <div class="title">Inicio</div>
-                            <div class="bar"></div>
                         </a>
                     </h5>
                     <h5 class="text-dark h4">
-                        <a href="#" class="link">
+                        <a href="index.php?controller=funcionamiento&action=" class="link">
                             <div class="title">Cómo se hace?</div>
-                            <div class="bar"></div>
                         </a>
                     </h5>
                     <h5 class="text-dark h4">
                         <a href="#" class="link">
                             <div class="title">Sobre mi</div>
-                            <div class="bar"></div>
                         </a>
                     </h5>
                     <h5 class="text-dark h4">
                         <a href="#" class="link">
                             <div class="title">Contacto</div>
-                            <div class="bar"></div>
                         </a>
                     </h5>
                     <!-- <span class="text-muted">Toggleable via the navbar brand.</span> -->
                 </div>
             </div>
-            <nav class="navbar navbar-dark bg-light">
-                <div class="container-fluid bg-light">
-                    <div class="logo text-dark me-auto">
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <div class="logo text-light me-auto">
                         <strong><?= $controller->page_title ?></strong>
                     </div>
-                    <button class="ms-auto navbar-toggler bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="ms-auto navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
