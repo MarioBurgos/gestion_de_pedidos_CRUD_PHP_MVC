@@ -2,7 +2,9 @@
 
 class Pedido {
 
-	private $table = 'pedidos';
+	private $tables = 'clientes, productos, pedidos';
+	private $columns = 'clientes.id as id_cliente, clientes.dni, clientes.nombre as nombre_cliente, clientes.apellido1, clientes.apellido2, productos.id as id_procuto, productos.codigo as codigo_producto, productos.nombre as nombre_producto, productos.descripcion, productos.precio as precio_unidad,	pedidos.id as id_pedido, pedidos.cantidad, pedidos.codigo_pedido, pedidos.fecha';
+	private $condition = 'WHERE pedidos.id_cliente = clientes.id AND pedidos.id_producto = productos.id';
 	private $conection;
 
 	public function __construct() {
@@ -18,7 +20,7 @@ class Pedido {
 	/* Get all pedidos */
 	public function getPedidos(){
 		$this->getConection();
-		$sql = "SELECT * FROM ".$this->table." ORDER BY codigo";
+		$sql = "SELECT ".$this->columns." FROM ".$this->tables." ".$this->condition;
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute();
 
@@ -29,7 +31,7 @@ class Pedido {
 	public function getPedidoById($id){
 		if(is_null($id)) return false;
 		$this->getConection();
-		$sql = "SELECT * FROM ".$this->table. " WHERE id = ?";
+		$sql = "SELECT * FROM ".$this->tables. " WHERE id = ?";
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute([$id]);
 
@@ -67,11 +69,11 @@ class Pedido {
 
 		/* Database operations */
 		if($exists){
-			$sql = "UPDATE ".$this->table. " SET codigo=?, nombre=?, descripcion=?, precio=? WHERE id=?";
+			$sql = "UPDATE ".$this->tables. " SET codigo=?, nombre=?, descripcion=?, precio=? WHERE id=?";
 			$stmt = $this->conection->prepare($sql);
 			$res = $stmt->execute([$codigo, $nombre, $descripcion, $precio, $id]);
 		}else{
-			$sql = "INSERT INTO ".$this->table. " (codigo, nombre, descripcion, precio) values(?, ?, ?, ?)";
+			$sql = "INSERT INTO ".$this->tables. " (codigo, nombre, descripcion, precio) values(?, ?, ?, ?)";
 			$stmt = $this->conection->prepare($sql);
 			$stmt->execute([$codigo, $nombre, $descripcion, $precio]);
 			$id = $this->conection->lastInsertId();
@@ -82,7 +84,7 @@ class Pedido {
 	/* Delete pedido by id */
 	public function deletePedidoById($id){
 		$this->getConection();
-		$sql = "DELETE FROM ".$this->table. " WHERE id = ?";
+		$sql = "DELETE FROM ".$this->tables. " WHERE id = ?";
 		$stmt = $this->conection->prepare($sql);
 		return $stmt->execute([$id]);
 	}
