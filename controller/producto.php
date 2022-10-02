@@ -17,6 +17,15 @@ class productoController{
 		return $this->productoObj->getProductos();
 	}
 
+	/* Show info */
+	public function detalle($id = null){
+		$this->page_title = 'Detalle del producto';
+		$this->view = 'detalle_producto';
+		/* Id can from get param or method param */
+		if(isset($_GET["id"])) $id = $_GET["id"];
+		return $this->productoObj->getProductoById($id);
+	}
+
 	/* Load note for edit */
 	public function edit($id = null){
 		$this->page_title = 'Editar producto';

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion Hotel</title>
+    <title>Gestion de Pedidos</title>
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
     <!-- BOOTSTRAP 5: css/js -->
@@ -52,13 +52,13 @@
                 <div class="container-fluid">
 
                     <a href="index.php?controller=producto&action=list" class="link mx-auto">
-                        <div class="title">Productos</div>
+                        <div class="title"><i class="bi bi-list-ol"></i> Productos</div>
                     </a>
                     <a href="index.php?controller=cliente&action=list" class="link mx-auto">
-                        <div class="title">Clientes</div>
+                        <div class="title"><i class="bi bi-people-fill"></i> Clientes</div>
                     </a>
                     <a href="index.php?controller=pedido&action=list" class="link mx-auto">
-                        <div class="title">Pedidos</div>
+                        <div class="title"><i class="bi bi-cart-check-fill"></i> Pedidos</div>
                     </a>
                     <button class="ms-auto navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

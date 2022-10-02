@@ -11,13 +11,22 @@ class clienteController{
 		$this->clienteObj = new Cliente();
 	}
 
-	/* List all notes */
+	/* List all clientes */
 	public function list(){
 		$this->page_title = 'Lista de clientes';
 		return $this->clienteObj->getClientes();
 	}
 
-	/* Load note for edit */
+	/* Show info */
+	public function detalle($id = null){
+		$this->page_title = 'Detalle cliente';
+		$this->view = 'detalle_cliente';
+		/* Id can from get param or method param */
+		if(isset($_GET["id"])) $id = $_GET["id"];
+		return $this->clienteObj->getClienteById($id);
+	}
+
+	/* Load cliente for edit */
 	public function edit($id = null){
 		$this->page_title = 'Editar cliente';
 		$this->view = 'edit_cliente';
@@ -26,7 +35,7 @@ class clienteController{
 		return $this->clienteObj->getClienteById($id);
 	}
 
-	/* Create or update note */
+	/* Create or update cliente */
 	public function save(){
 		$this->page_title = 'Nuevo cliente';
 		$this->view = 'edit_cliente';
@@ -45,7 +54,7 @@ class clienteController{
 
 	/* Delete */
 	public function delete(){
-		$this->page_title = 'Lista de clientes';
+		$this->page_title = 'Cliente eliminado';
 		$this->view = 'delete_cliente';
 		return $this->clienteObj->deleteClienteById($_POST["id"]);
 	}

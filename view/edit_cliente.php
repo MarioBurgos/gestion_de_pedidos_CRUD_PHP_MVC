@@ -32,9 +32,10 @@ if (isset($dataToView["data"]["apellido2"])) $apellido2 = $dataToView["data"]["a
 				</div>
 				<div class="form-group mb-4">
 					<label>Apellidos:</label>
-					<input class="form-control mb-2" type="text" name="nombre" value="<?= $apellido1; ?>" />
-					<input class="form-control mb-2" type="text" name="nombre" value="<?= $apellido2; ?>" />
+					<input class="form-control mb-2" type="text" name="apellido1" value="<?= $apellido1; ?>" />
+					<input class="form-control mb-2" type="text" name="apellido2" value="<?= $apellido2; ?>" />
 				</div>
+				
 				<input type="submit" value="Guardar" class="btn btn-primary" />
 				<a class="btn btn-outline-danger" href="index.php?controller=cliente&action=list">Cancelar</a>
 			</form>
