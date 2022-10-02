@@ -1,7 +1,7 @@
-<div class="section-three">
+<div class="section-two w-100">
     <div class="container">
         <div class="col-md-12 text-right">
-            <a href="index.php?controller=producto&action=edit" class="btn btn-outline-primary">Añadir nuevo</a>
+            <a href="index.php?controller=producto&action=edit" class="btn btn-primary">Nuevo producto</a>
             <hr />
         </div>
         <?php
@@ -15,8 +15,9 @@
                         <div class="card-text">
                             <?php echo $producto['nombre']  ?>
                             <?php echo '<b> (' . $producto['precio'] . ')</b>' ?>
-                            <a href="index.php?controller=producto&action=edit&id=<?= $producto['id']; ?>" class="btn btn-sm btn-primary mx-1 float-end">Editar</a>
                             <a href="index.php?controller=producto&action=confirmDelete&id=<?= $producto['id']; ?>" class="btn btn-sm btn-danger mx-1 float-end">Eliminar</a>
+                            <a href="index.php?controller=producto&action=edit&id=<?= $producto['id']; ?>" class="btn btn-sm btn-primary mx-1 float-end">Editar</a>
+                            <a href="index.php?controller=producto&action=getProductoById&id=<?= $producto['id']; ?>" class="btn btn-sm btn-secondary mx-1 float-end">Detalle</a>
                         </div>
                     </div>
                 </div>

@@ -20,22 +20,24 @@
 }
 .section-two {
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.65),
-      rgba(255, 255, 255, 0.1)
+      rgba(155, 155, 155, 0.65),
+      rgba(155, 155, 155, 0.1)
     ),
     url("../img/section2-bg.jpg");
+    background-size: 100%;
 }
 .section-three {
   background-image: linear-gradient(
-      rgba(0, 0, 0, 0.85),
-      rgba(0, 0, 0, 0.1)
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.45)
     ),
     url("../img/section3-bg.jpg");
   background-size: 300px;
   background-repeat: repeat;
 }
 
-.container{
+.container {
   margin: 50px;
 }
 .container-dark {

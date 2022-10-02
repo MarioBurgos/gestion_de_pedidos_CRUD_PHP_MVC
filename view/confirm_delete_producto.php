@@ -1,4 +1,4 @@
-<div class="section-three">
+<div class="section-two w-100">
 	<div class="container">
 		<form class="form" action="index.php?controller=producto&action=delete" method="POST">
 			<input type="hidden" name="id" value="<?php echo $dataToView["data"]["id"]; ?>" />

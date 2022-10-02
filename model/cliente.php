@@ -1,8 +1,8 @@
 <?php 
 
-class Producto {
+class Cliente {
 
-	private $table = 'productos';
+	private $table = 'clientes';
 	private $conection;
 
 	public function __construct() {
@@ -15,18 +15,18 @@ class Producto {
 		$this->conection = $dbObj->conection;
 	}
 
-	/* Get all productos */
-	public function getProductos(){
+	/* Get all clientes */
+	public function getClientes(){
 		$this->getConection();
-		$sql = "SELECT * FROM ".$this->table." ORDER BY codigo";
+		$sql = "SELECT * FROM ".$this->table;
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute();
 
 		return $stmt->fetchAll();
 	}
 
-	/* Get producto by id */
-	public function getProductoById($id){
+	/* Get cliente by id */
+	public function getClienteById($id){
 		if(is_null($id)) return false;
 		$this->getConection();
 		$sql = "SELECT * FROM ".$this->table. " WHERE id = ?";
@@ -36,51 +36,51 @@ class Producto {
 		return $stmt->fetch();
 	}
 
-	/* Save producto */
+	/* Save cliente */
 	public function save($param){
 		$this->getConection();
 
 		/* Set default values */
-		$codigo = $nombre = $descripcion = "";
+		$dni = $nombre = $apellido1 = $apellido2 = "";
         $precio = 0;
 
 		/* Check if exists */
 		$exists = false;
 		if(isset($param["id"]) and $param["id"] !=''){
-			$actualProducto = $this->getProductoById($param["id"]);
+			$actualProducto = $this->getClienteById($param["id"]);
 			if(isset($actualProducto["id"])){
 				$exists = true;	
 				/* Actual values */
 				$id = $param["id"];
-				$codigo = $actualProducto["codigo"];
+				$dni = $actualProducto["dni"];
 				$nombre = $actualProducto["nombre"];
-				$descripcion = $actualProducto["descripcion"];
-				$precio = $actualProducto["precio"];
+				$apellido1 = $actualProducto["apellido1"];
+				$apellido2 = $actualProducto["precio"];
 			}
 		}
 
 		/* Received values */
-		if(isset($param["codigo"])) $codigo = $param["codigo"];
+		if(isset($param["dni"])) $dni = $param["dni"];
 		if(isset($param["nombre"])) $nombre = $param["nombre"];
-		if(isset($param["descripcion"])) $descripcion = $param["descripcion"];
-		if(isset($param["precio"])) $precio = $param["precio"];
+		if(isset($param["apellido1"])) $apellido1 = $param["apellido1"];
+		if(isset($param["apellido2"])) $apellido2 = $param["apellido2"];
 
 		/* Database operations */
 		if($exists){
-			$sql = "UPDATE ".$this->table. " SET codigo=?, nombre=?, descripcion=?, precio=? WHERE id=?";
+			$sql = "UPDATE ".$this->table. " SET dni=?, nombre=?, apellido1=?, apellido2=? WHERE id=?";
 			$stmt = $this->conection->prepare($sql);
-			$res = $stmt->execute([$codigo, $nombre, $descripcion, $precio, $id]);
+			$stmt->execute([$dni, $nombre, $apellido1, $apellido2, $id]);
 		}else{
-			$sql = "INSERT INTO ".$this->table. " (codigo, nombre, descripcion, precio) values(?, ?, ?, ?)";
+			$sql = "INSERT INTO ".$this->table. " (dni, nombre, apellido1, apellido2) values(?, ?, ?, ?)";
 			$stmt = $this->conection->prepare($sql);
-			$stmt->execute([$codigo, $nombre, $descripcion, $precio]);
+			$stmt->execute([$dni, $nombre, $apellido1, $apellido2]);
 			$id = $this->conection->lastInsertId();
 		}	
 		return $id;	
 	}
 
-	/* Delete producto by id */
-	public function deleteProductoById($id){
+	/* Delete cliente by id */
+	public function deleteClienteById($id){
 		$this->getConection();
 		$sql = "DELETE FROM ".$this->table. " WHERE id = ?";
 		$stmt = $this->conection->prepare($sql);

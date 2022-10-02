@@ -1,4 +1,4 @@
-<section class="section-one">
+<section class="section-one w-100">
     <div class="container-dark">
         <h1>Gestion de pedidos</h1>
         <p>Una aplicacion web desarrollada por Mario Burgos</p>

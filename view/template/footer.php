@@ -23,7 +23,7 @@
 
     </div>
     <div>
-      <a href="#!"><img class="footer__logo" src="<?= PATH_TO_IMG . 'logo_transparente.png' ?>" width="100px" alt="MB logo" /></a>
+      <a href="#!"><img class="footer__logo " src="<?= PATH_TO_IMG . 'logo_transparente.png' ?>" width="100px" alt="MB logo" /></a>
     </div>
   </div>
   <hr />

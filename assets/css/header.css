@@ -51,11 +51,9 @@ body {
   font-weight: 800;
   font-size: 16px;
   color: white;
-  border-bottom: 5px solid yellow;
 }
 .link:hover {
   color: yellow;
-  border-bottom: 5px solid white;
   transition: all .5s ease-out ;
 
 }

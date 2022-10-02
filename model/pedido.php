@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-class Producto {
+class Pedido {
 
-	private $table = 'productos';
+	private $table = 'pedidos';
 	private $conection;
 
 	public function __construct() {
@@ -15,8 +15,8 @@ class Producto {
 		$this->conection = $dbObj->conection;
 	}
 
-	/* Get all productos */
-	public function getProductos(){
+	/* Get all pedidos */
+	public function getPedidos(){
 		$this->getConection();
 		$sql = "SELECT * FROM ".$this->table." ORDER BY codigo";
 		$stmt = $this->conection->prepare($sql);
@@ -25,8 +25,8 @@ class Producto {
 		return $stmt->fetchAll();
 	}
 
-	/* Get producto by id */
-	public function getProductoById($id){
+	/* Get pedido by id */
+	public function getPedidoById($id){
 		if(is_null($id)) return false;
 		$this->getConection();
 		$sql = "SELECT * FROM ".$this->table. " WHERE id = ?";
@@ -36,7 +36,7 @@ class Producto {
 		return $stmt->fetch();
 	}
 
-	/* Save producto */
+	/* Save pedido */
 	public function save($param){
 		$this->getConection();
 
@@ -47,7 +47,7 @@ class Producto {
 		/* Check if exists */
 		$exists = false;
 		if(isset($param["id"]) and $param["id"] !=''){
-			$actualProducto = $this->getProductoById($param["id"]);
+			$actualProducto = $this->getPedidoById($param["id"]);
 			if(isset($actualProducto["id"])){
 				$exists = true;	
 				/* Actual values */
@@ -79,13 +79,14 @@ class Producto {
 		return $id;	
 	}
 
-	/* Delete producto by id */
-	public function deleteProductoById($id){
+	/* Delete pedido by id */
+	public function deletePedidoById($id){
 		$this->getConection();
 		$sql = "DELETE FROM ".$this->table. " WHERE id = ?";
 		$stmt = $this->conection->prepare($sql);
 		return $stmt->execute([$id]);
 	}
+
 
 }
 

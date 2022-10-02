@@ -22,27 +22,26 @@
 
 <body>
     <div class="page">
-
         <header>
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="uncollapsed bg-dark p-2">
                     <h5 class="text-light h4">
-                        <a href="index.php?controller=inicio&action=" class="link">
+                        <a href="index.php?controller=inicio" class="link text-secondary">
                             <div class="title">Inicio</div>
                         </a>
                     </h5>
                     <h5 class="text-dark h4">
-                        <a href="index.php?controller=funcionamiento&action=" class="link">
-                            <div class="title">Cómo se hace?</div>
+                        <a href="index.php?controller=funcionamiento&action=" class="link text-secondary">
+                            <div class="title">Acerca de la aplicación</div>
                         </a>
                     </h5>
                     <h5 class="text-dark h4">
-                        <a href="#" class="link">
+                        <a href="#" class="link text-secondary">
                             <div class="title">Sobre mi</div>
                         </a>
                     </h5>
                     <h5 class="text-dark h4">
-                        <a href="#" class="link">
+                        <a href="#" class="link text-secondary">
                             <div class="title">Contacto</div>
                         </a>
                     </h5>
@@ -51,12 +50,22 @@
             </div>
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <div class="logo text-light me-auto">
-                        <strong><?= $controller->page_title ?></strong>
-                    </div>
+
+                    <a href="index.php?controller=producto&action=list" class="link mx-auto">
+                        <div class="title">Productos</div>
+                    </a>
+                    <a href="index.php?controller=cliente&action=list" class="link mx-auto">
+                        <div class="title">Clientes</div>
+                    </a>
+                    <a href="index.php?controller=pedido&action=list" class="link mx-auto">
+                        <div class="title">Pedidos</div>
+                    </a>
                     <button class="ms-auto navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
             </nav>
+            <div class="logo text-secondary bg-dark me-auto pb-2 ps-3">
+                <strong><?= $controller->page_title ?></strong>
+            </div>
         </header>
