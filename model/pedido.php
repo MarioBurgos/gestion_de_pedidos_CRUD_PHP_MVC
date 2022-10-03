@@ -4,7 +4,7 @@ class Pedido {
 
 	private $columns = 'clientes.id as id_cliente, clientes.dni, clientes.nombre as nombre_cliente, clientes.apellido1, clientes.apellido2, productos.id as id_producto, productos.codigo as codigo_producto, productos.nombre as nombre_producto, productos.descripcion, productos.precio as precio_unidad, pedidos.id as id_pedido, pedidos.cantidad, pedidos.codigo_pedido, pedidos.fecha';
 	private $tables = 'clientes, productos, pedidos';
-	private $condition = 'pedidos.id_cliente = clientes.id AND pedidos.id_producto = productos.id';
+	private $condition = 'pedidos.id_cliente = clientes.id AND pedidos.id_producto = productos.id ORDER BY pedidos.id';
 	private $conection;
 
 	public function __construct() {
