@@ -5,38 +5,37 @@
             <hr />
         </div>
         <?php
-        $pedidoActual = 0;
-        $j = 0;
+        $pedidoActual = '';
+           $j = 0;
         for ($i = 0; $i < count($dataToView["data"]); $i++) {
-            $precioTotal = 0;
+         
             $pedido = $dataToView["data"][$i];
             // echo '<pre>';
-            // print_r($pedido);
-            //
+            // print_r($dataToView["data"]);
         ?>
             <?php
             if ($pedido['codigo_pedido'] != $pedidoActual) {
+                $precioTotal = 0;
                 $pedidoActual = $pedido['codigo_pedido'];
-            ?><div class="row mb-2">
+            ?>
+                <div class="row mb-2">
                     <div class="card-body border border-secondary bg-light rounded">
-                        <h5 class="card-title"> Código de pedido: <?php echo $pedido['codigo_pedido']; ?><small> <span class="float-end">Fecha: <?php echo $pedido['fecha']; ?></span></small> </h5>
+                        <h5 class="card-title"> Código de pedido: <?php echo $pedido['codigo_pedido']; ?><small> <span class="float-end">Fecha: <b> <?php echo $pedido['fecha']; ?> </b></span></small> </h5>
                         <hr />
                         <div class="card-text">
-                            <h4>Datos del cliente:</h4>
+                            <h4><b>Datos del cliente:</b></h4>
                             <?php
                             echo $pedido['dni'] . ' / ' . $pedido['nombre_cliente'] . ' ' . $pedido['apellido1'] . ' ' . $pedido['apellido2'];
                             ?>
                             <!-- break line -->
-                            <h5 class="mt-3">Productos:</h5>
+                            <h5 class="mt-3"><b>Productos:</b></h5>
                             <?php
 
-                            // $pedidoActual = $dataToView["data"][$j];
                             while ($pedido['codigo_pedido'] == $dataToView["data"][$j]['codigo_pedido']) {
-                            ?>
-                                <i> <?php $dataToView["data"][$j]['precio_unidad'] * $dataToView["data"][$j]['cantidad'] ?> € /</i>;
-                                <b>[<?php $dataToView["data"][$j]['codigo_producto'] ?>]</b>
-                                <i><?php $dataToView["data"][$j]['nombre_producto'] ?></i><br>';
-                            <?php
+                                echo '<i>' . $dataToView["data"][$j]['cantidad'] . ' x   ';
+                                echo '<b>[' . $dataToView["data"][$j]['codigo_producto'] . ']</b> - ';
+                                echo $dataToView["data"][$j]['nombre_producto'] . '</i> - ';
+                                echo  $dataToView["data"][$j]['precio_unidad'] . ' €<br>';
                                 $precioTotal += $dataToView["data"][$j]['precio_unidad'] * $dataToView["data"][$j]['cantidad'];
                                 $j++;
                             }
@@ -54,4 +53,11 @@
         }
         ?>
     </div>
+    <a href='#' class='scroll-top'>
+        <svg height='35' viewBox='0 0 24 24' width='35' xmlns='http://www.w3.org/2000/svg'>
+            <path d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z' />
+            <path d='M0 0h24v24H0z' fill='none' />
+        </svg>
+    </a>
+
 </div>
