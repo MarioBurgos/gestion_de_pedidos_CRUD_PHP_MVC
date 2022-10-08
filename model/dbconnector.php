@@ -1,7 +1,5 @@
-<?php 
-
+<?php
 require_once 'config/config.php';
-
 class DbConnector {
 
 	private $host;

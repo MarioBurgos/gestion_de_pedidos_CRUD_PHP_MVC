@@ -21,8 +21,17 @@ $controller = new $controllerName();
 $dataToView["data"] = array();
 if(method_exists($controller,$_GET["action"])) $dataToView["data"] = $controller->{$_GET["action"]}();
 
-
+/* Si la intencion es ver xml, hay un header preparado con el content type */
+if($_GET['action'] == 'createXML'){
+    require_once 'view/template/header_xml.php';
+    require_once 'view/'.$controller->view.'.php';
+}elseif($_GET['controller'] == 'inicio'){
+    require_once 'view/template/header_inicio.php';
+    require_once 'view/'.$controller->view.'.php';
+    require_once 'view/template/footer.php';
+}else{
 /* Load views */
 require_once 'view/template/header.php';
 require_once 'view/'.$controller->view.'.php';
 require_once 'view/template/footer.php';
+}

@@ -1,6 +1,5 @@
-<?php 
+<?php
 require_once 'model/pedido.php';
-
 class pedidoController{
 	public $page_title;
 	public $view;
@@ -11,13 +10,21 @@ class pedidoController{
 		$this->pedidoObj = new Pedido();
 	}
 
-	/* List all notes */
+	/* List all pedidos */
 	public function list(){
 		$this->page_title = 'Lista de pedidos';
 		return $this->pedidoObj->getPedidos();
 	}
+	/* Show info */
+	public function detalle($codigoPedido = null){
+		$this->page_title = 'Detalle del pedido';
+		$this->view = 'detalle_pedido';
+		/* Id can from get param or method param */
+		if(isset($_GET["codigo_pedido"])) $codigoPedido = $_GET["codigo_pedido"];
+		return $this->pedidoObj->getPedidoByCodigoPedido($codigoPedido);
+	}
 
-	/* Load note for edit */
+	/* Load pedido for edit */
 	public function edit($id = null){
 		$this->page_title = 'Editar pedido';
 		$this->view = 'edit_pedido';
@@ -26,7 +33,7 @@ class pedidoController{
 		return $this->pedidoObj->getPedidoById($id);
 	}
 
-	/* Create or update note */
+	/* Create or update pedido */
 	public function save(){
 		$this->page_title = 'Nuevo pedido';
 		$this->view = 'edit_pedido';
@@ -48,6 +55,12 @@ class pedidoController{
 		$this->page_title = 'Lista de pedidos';
 		$this->view = 'delete_pedido';
 		return $this->pedidoObj->deletePedidoById($_POST["id"]);
+	}
+
+	public function createXML(){
+		$this->page_title = 'Pedidos en formato XML';
+		$this->view = 'xml_view';
+		return $this->pedidoObj->createXML();
 	}
 
 }

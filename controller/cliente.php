@@ -1,6 +1,5 @@
-<?php 
+<?php
 require_once 'model/cliente.php';
-
 class clienteController{
 	public $page_title;
 	public $view;
@@ -59,6 +58,11 @@ class clienteController{
 		return $this->clienteObj->deleteClienteById($_POST["id"]);
 	}
 
+	public function createXML(){
+		$this->page_title = 'Clientes en formato XML';
+		$this->view = 'xml_view';
+		return $this->clienteObj->createXML();
+	}
 }
 
 ?>

@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 class Cliente {
 
 	private $table = 'clientes';
@@ -47,15 +46,15 @@ class Cliente {
 		/* Check if exists */
 		$exists = false;
 		if(isset($param["id"]) and $param["id"] !=''){
-			$actualProducto = $this->getClienteById($param["id"]);
-			if(isset($actualProducto["id"])){
+			$actualcliente = $this->getClienteById($param["id"]);
+			if(isset($actualcliente["id"])){
 				$exists = true;	
 				/* Actual values */
 				$id = $param["id"];
-				$dni = $actualProducto["dni"];
-				$nombre = $actualProducto["nombre"];
-				$apellido1 = $actualProducto["apellido1"];
-				$apellido2 = $actualProducto["precio"];
+				$dni = $actualcliente["dni"];
+				$nombre = $actualcliente["nombre"];
+				$apellido1 = $actualcliente["apellido1"];
+				$apellido2 = $actualcliente["precio"];
 			}
 		}
 
@@ -85,6 +84,29 @@ class Cliente {
 		$sql = "DELETE FROM ".$this->table. " WHERE id = ?";
 		$stmt = $this->conection->prepare($sql);
 		return $stmt->execute([$id]);
+	}
+
+	/* XML Generator  */
+	public function createXML()
+	{
+		$file = fopen("listado_clientes.xml", "w");
+		//apertura del documento xml y la etiqueta raiz
+		$txt = utf8_encode('<clientes>');
+		$clientes = $this->getClientes();
+		foreach ($clientes as $c) {
+			$txt .= utf8_encode('<cliente>');
+			$txt .= utf8_encode('<id><![CDATA[' . $c['id'] . ']]></id>');
+			$txt .= utf8_encode('<dni><![CDATA[' . $c['dni'] . ']]></dni>');
+			$txt .= utf8_encode('<nombre><![CDATA[' . $c['nombre'] . ']]></nombre>');
+			$txt .= utf8_encode('<apellido1><![CDATA[' . $c['apellido1'] . ']]></apellido1>');
+			$txt .= utf8_encode('<apellido2><![CDATA[' . $c['apellido2'] . ']]></apellido2>');
+			$txt .= utf8_encode('</cliente>');
+		}
+		//cierre de la etiqueta raiz
+		$txt .= utf8_encode('</clientes>');
+		fwrite($file, $txt);
+		fclose($file);
+		return $txt;
 	}
 
 }

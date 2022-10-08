@@ -1,0 +1,13 @@
+<?php
+class aboutController{
+	public $page_title;
+	public $view;
+
+	public function __construct() {
+		$this->view = 'about';
+		$this->page_title = 'Sobre el autor';
+	}
+
+}
+
+?>

@@ -1,0 +1,19 @@
+.code-box{
+    max-width: 1000px;
+    margin: 1em auto 0;
+    padding: 2em 3em;
+    background-color: #aaa;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 2px #555;
+}
+.palabra-reservada{
+    color: #99f;
+}
+.simbolo{
+    color: #e0e;
+}
+code{
+    color: #ee5;
+}

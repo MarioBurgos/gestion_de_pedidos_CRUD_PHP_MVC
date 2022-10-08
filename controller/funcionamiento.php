@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 class funcionamientoController{
 	public $page_title;
 	public $view;

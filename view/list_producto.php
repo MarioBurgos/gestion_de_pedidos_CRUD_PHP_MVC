@@ -1,8 +1,13 @@
 <div class="section-two w-100">
-    <div class="container" id="content-top">
-        <div class="col-md-12 text-right">
-            <a href="index.php?controller=producto&action=edit" class="btn btn-primary">Nuevo producto</a>
-            <hr />
+    <div class="container">
+        <div class="row p-2">
+            <div class="col-4">
+                <a href="index.php?controller=producto&action=edit" class="btn btn-success">Nuevo producto</a>
+            </div>
+            <div class="col-8 d-flex justify-content-end">
+            <a href="index.php?controller=producto&action=createXML" class="btn btn-warning shadow me-2">Ver XML</a>
+            <a href="listado_productos.xml" download class="btn btn-warning shadow">Descarga XML</a>
+            </div>
         </div>
         <?php
         if (count($dataToView["data"]) > 0) {
@@ -19,7 +24,6 @@
                         <a href="index.php?controller=producto&action=confirmDelete&id=<?= $producto['id']; ?>" class="btn btn-sm btn-danger mx-1 float-end">Eliminar</a>
                         <a href="index.php?controller=producto&action=edit&id=<?= $producto['id']; ?>" class="btn btn-sm btn-primary mx-1 float-end">Editar</a>
                         <a href="index.php?controller=producto&action=detalle&id=<?= $producto['id']; ?>" class="btn btn-sm btn-secondary mx-1 float-end">Detalle</a>
-
                     </div>
                 </div>
             <?php

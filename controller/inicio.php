@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 class inicioController{
 	public $page_title;
 	public $view;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD</title>
+    <title>Inicio</title>
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
     <!-- BOOTSTRAP 5: css/js -->
@@ -29,49 +29,40 @@
 <body>
     <div class="page">
         <header>
-            <div class="collapse" id="navbarToggleExternalContent">
-                <div class="uncollapsed bg-dark p-2">
-                    <h5 class="text-light h4">
-                        <a href="index.php?controller=inicio" class="link text-secondary">
-                            <div class="title">Inicio</div>
-                        </a>
-                    </h5>
-                    <h5 class="text-dark h4">
-                        <a href="index.php?controller=funcionamiento&action=" class="link text-secondary">
-                            <div class="title">Acerca de la aplicación</div>
-                        </a>
-                    </h5>
-                    <h5 class="text-dark h4">
-                        <a href="#" class="link text-secondary">
-                            <div class="title">Sobre mi</div>
-                        </a>
-                    </h5>
-                    <h5 class="text-dark h4">
-                        <a href="#" class="link text-secondary">
-                            <div class="title">Contacto</div>
-                        </a>
-                    </h5>
-                    <!-- <span class="text-muted">Toggleable via the navbar brand.</span> -->
-                </div>
-            </div>
+
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
-
-                    <a href="index.php?controller=producto&action=list" class="link mx-auto">
-                        <div class="title"><i class="bi bi-list-ol"></i> Productos</div>
-                    </a>
-                    <a href="index.php?controller=cliente&action=list" class="link mx-auto">
-                        <div class="title"><i class="bi bi-people-fill"></i> Clientes</div>
-                    </a>
-                    <a href="index.php?controller=pedido&action=list" class="link mx-auto">
-                        <div class="title"><i class="bi bi-cart-check-fill"></i> Pedidos</div>
-                    </a>
+                    <div class="collapse w-75" id="navbarToggleExternalContent">
+                        <div class="uncollapsed bg-dark">
+                            <h5 class="text-light h4">
+                                <a href="index.php?controller=inicio" class="link text-secondary">
+                                    <div class="title">Inicio</div>
+                                </a>
+                            </h5>
+                            <h5 class="text-dark h4">
+                                <a href="#funcionamiento" class="link text-secondary">
+                                    <div class="title">Acerca de la aplicación</div>
+                                </a>
+                            </h5>
+                            <h5 class="text-dark h4">
+                                <a href="#about" class="link text-secondary">
+                                    <div class="title">Sobre mi</div>
+                                </a>
+                            </h5>
+                            <h5 class="text-dark h4">
+                                <a href="#contacto" class="link text-secondary">
+                                    <div class="title">Contacto</div>
+                                </a>
+                            </h5>
+                            <!-- <span class="text-muted">Toggleable via the navbar brand.</span> -->
+                        </div>
+                    </div>
                     <button class="ms-auto navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+                <div class="logo text-secondary bg-dark me-auto pb-2 ps-3">
+                    Estás en: &nbsp;&nbsp;&nbsp; <strong><?= $controller->page_title ?></strong>
+                </div>
             </nav>
-            <div class="logo text-secondary bg-dark me-auto pb-2 ps-3">
-                Estás en: &nbsp;&nbsp;&nbsp; <strong><?=$controller->page_title ?></strong>
-            </div>
         </header>

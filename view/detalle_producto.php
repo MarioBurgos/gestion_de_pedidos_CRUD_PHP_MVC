@@ -1,7 +1,7 @@
 <div class="section-two w-100">
     <div class="container-fluid">
         <div class="col-md-12 text-right">
-            <a href="index.php?controller=cliente&action=edit" class="btn btn-primary">Nuevo producto</a>
+            <a href="index.php?controller=producto&action=edit" class="btn btn-primary">Nuevo producto</a>
             <hr />
         </div>
         <div>

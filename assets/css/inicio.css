@@ -17,6 +17,8 @@
 .section-one {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.1)),
     url("../img/section1-bg.jpg");
+    background-position: center center;
+  background-attachment: fixed;
 }
 .section-two {
   background-image: linear-gradient(
@@ -24,7 +26,7 @@
       rgba(155, 155, 155, 0.1)
     ),
     url("../img/section2-bg.jpg");
-  background-size: 100%;
+  background-attachment: fixed;
 }
 .section-three {
   background-image: linear-gradient(
@@ -33,8 +35,9 @@
       rgba(0, 0, 0, 0.45)
     ),
     url("../img/section3-bg.jpg");
-  background-size: 300px;
+  background-size: 200px;
   background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .container {
@@ -54,6 +57,9 @@ h1 {
   letter-spacing: 5px;
   font-size: 4rem;
   font-weight: 400;
+}
+h2{
+  margin-top: 2em;
 }
 
 p {

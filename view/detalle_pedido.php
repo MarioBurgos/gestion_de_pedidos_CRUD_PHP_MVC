@@ -1,13 +1,8 @@
 <div class="section-two w-100">
-<div class="container">
-        <div class="row p-2">
-            <div class="col-4">
-                <a href="index.php?controller=pedido&action=edit" class="btn btn-success">Nuevo pedido</a>
-            </div>
-            <div class="col-8 d-flex justify-content-end">
-            <a href="index.php?controller=pedido&action=createXML" class="btn btn-warning shadow me-2">Ver XML</a>
-            <a href="listado_pedidos.xml" download class="btn btn-warning shadow">Descarga XML</a>
-            </div>
+    <div class="container">
+        <div class="col-md-12">
+            <a href="index.php?controller=pedido&action=edit" class="btn btn-primary ms-3">Nuevo pedido</a>
+            <hr />
         </div>
         <?php
         $pedidoActual = '';
@@ -23,7 +18,7 @@
                 $precioTotal = 0;
                 $pedidoActual = $pedido['codigo_pedido'];
             ?>
-                <div class="row px-3 mb-2">
+                <div class="col-md-12 mx-auto mb-3 px-2">
                     <div class="card-body border border-secondary bg-light rounded">
                         <h5 class="card-title"> Código de pedido: <?php echo $pedido['codigo_pedido']; ?><small> <span class="float-end">Fecha: <b> <?php echo $pedido['fecha']; ?> </b></span></small> </h5>
                         <hr />

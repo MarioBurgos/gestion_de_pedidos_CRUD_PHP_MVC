@@ -1,6 +1,5 @@
-<?php 
+<?php
 require_once 'model/producto.php';
-
 class productoController{
 	public $page_title;
 	public $view;
@@ -11,7 +10,7 @@ class productoController{
 		$this->productoObj = new Producto();
 	}
 
-	/* List all notes */
+	/* List all productos */
 	public function list(){
 		$this->page_title = 'Lista de productos';
 		return $this->productoObj->getProductos();
@@ -26,7 +25,7 @@ class productoController{
 		return $this->productoObj->getProductoById($id);
 	}
 
-	/* Load note for edit */
+	/* Load producto for edit */
 	public function edit($id = null){
 		$this->page_title = 'Editar producto';
 		$this->view = 'edit_producto';
@@ -35,7 +34,7 @@ class productoController{
 		return $this->productoObj->getProductoById($id);
 	}
 
-	/* Create or update note */
+	/* Create or update producto */
 	public function save(){
 		$this->page_title = 'Nuevo producto';
 		$this->view = 'edit_producto';
@@ -57,6 +56,12 @@ class productoController{
 		$this->page_title = 'Lista de productos';
 		$this->view = 'delete_producto';
 		return $this->productoObj->deleteProductoById($_POST["id"]);
+	}
+
+	public function createXML(){
+		$this->page_title = 'Productos en formato XML';
+		$this->view = 'xml_view';
+		return $this->productoObj->createXML();
 	}
 
 }
