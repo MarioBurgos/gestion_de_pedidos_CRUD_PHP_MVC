@@ -44,7 +44,7 @@
                                 $precioTotal += $dataToView["data"][$j]['precio_unidad'] * $dataToView["data"][$j]['cantidad'];
                                 $j++;
                             }
-                            echo ' <hr><span class="h4"><b>Total: ' . $precioTotal . '</b></span>';
+                            echo ' <hr><span class="h4"><b>Total: ' . $precioTotal . ' €</b></span>';
                             ?>
                             <a href="index.php?controller=pedido&action=confirmDelete&id=<?= $pedido['id_pedido']; ?>" class="btn btn-sm btn-danger mx-1 float-end">Eliminar</a>
                             <a href="index.php?controller=pedido&action=edit&id=<?= $pedido['id_pedido']; ?>" class="btn btn-sm btn-primary mx-1 float-end">Editar</a>

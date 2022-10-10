@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/inicio.css">
     <link rel="stylesheet" href="assets/css/funcionamiento.css">
+    <link rel="stylesheet" href="assets/css/separator.css">
     <script src="js/volver-arriba.js"></script>
 </head>
 
@@ -35,22 +36,22 @@
                     <div class="collapse w-75" id="navbarToggleExternalContent">
                         <div class="uncollapsed bg-dark">
                             <h5 class="text-light h4">
-                                <a href="index.php?controller=inicio" class="link text-secondary">
+                                <a href="index.php?controller=inicio" class="link">
                                     <div class="title">Inicio</div>
                                 </a>
                             </h5>
                             <h5 class="text-dark h4">
-                                <a href="#funcionamiento" class="link text-secondary">
+                                <a href="#funcionamiento" class="link">
                                     <div class="title">Acerca de la aplicación</div>
                                 </a>
                             </h5>
                             <h5 class="text-dark h4">
-                                <a href="#about" class="link text-secondary">
+                                <a href="#about" class="link">
                                     <div class="title">Sobre mi</div>
                                 </a>
                             </h5>
                             <h5 class="text-dark h4">
-                                <a href="#contacto" class="link text-secondary">
+                                <a href="#contacto" class="link">
                                     <div class="title">Contacto</div>
                                 </a>
                             </h5>

@@ -8,5 +8,6 @@
     </div>
     
 </section>
+<?php require_once 'view/template/social.php' ?>
 <?php require_once 'view/funcionamiento.php' ?>
 </div>

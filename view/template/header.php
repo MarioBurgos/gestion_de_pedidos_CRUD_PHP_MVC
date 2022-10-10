@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/inicio.css">
     <link rel="stylesheet" href="assets/css/funcionamiento.css">
+    <link rel="stylesheet" href="assets/css/separator.css">
     <script src="js/volver-arriba.js"></script>
 </head>
 

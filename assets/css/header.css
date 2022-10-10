@@ -9,12 +9,12 @@ html,
 body {
   font-family: "Dosis";
   font-weight: 400;
+  scroll-behavior: smooth;
 }
 
 header {
   min-height: var(--header-height);
   width: 100%;
-  text-align: right;
   position: relative;
   font-family: 'Cairo', sans-serif;}
 .navbar-dark .navbar-toggler-icon {
@@ -39,7 +39,7 @@ header {
 }
 .link:hover {
   color: yellow;
-  transition: all 0.5s ease-out;
+  transition: all 2s ease-in-out;
 }
 
 
@@ -47,6 +47,7 @@ header {
   .uncollapsed {
     display: flex;
     justify-content: space-around;
+    text-align: start;
   }
   .link {
     font-size: 20px;
